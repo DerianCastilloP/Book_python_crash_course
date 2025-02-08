@@ -74,7 +74,7 @@ if 'peperoni' in my_pizzas:
 else:
     print('False')
 #######################
-if not 'pepe' in my_pizzas:
+if 'pepe'not in my_pizzas:
     print('True')
 else:
     print('False')
