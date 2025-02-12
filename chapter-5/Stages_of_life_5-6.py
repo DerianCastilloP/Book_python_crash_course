@@ -1,5 +1,5 @@
 ######### Stages of life 5-6 ######
-from random import random, randint
+from random import randint
 
 age_person = randint(0, 100)
 
