@@ -1,6 +1,6 @@
 #Description of exercise 'People 6-7'
 from random import randint
-from tkinter.font import names
+
 """
 #Creando los nombre de las variables para no crearlas manualmente
 variable_pets = {}
