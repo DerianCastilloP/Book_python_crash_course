@@ -1,37 +1,43 @@
-#Description of exercise 'People 6-7'
-from random import randint
+#Description of exercise 'Pets 6-8'
+from random import randint, choice
 
-"""
-#Creando los nombre de las variables para no crearlas manualmente
-variable_pets = {}
-x = 3
-for i in range(x):
-    var_pets = f'pets_{i}'
-    variable_pets[var_pets] = {}
+#listas de mascotas
+pets_kinds = ["Dog", "Cat", "Rabbit", "Parrot", "Hamster", "Turtle", "Fish",
+    "Guinea Pig", "Lizard", "Ferret"]
 
-print(variable_pets) # comprobando las variables
+#listas de nombres
+pets_names = ['perensejo', 'sutanejo', "Firulais", "Pelusa", "Max", "Luna", "Rocky", "Simba", "Nala", "Toby",
+    "Coco", "Milo", "Bobby", "Daisy", "Tom", "Jerry", "Chispa", "Bruno",
+    "Kira", "Zeus", "Pandaty", "Snowball"]
 
-##Variables creadas
-"""
-pets_kinds = ['loro', 'perro', 'cotorra']
-pets_names = ['perensejo', 'sutanejo', 'aquel']
-
-number_pets = 4
+number_pets = 17 #Poner la cantidad de mascotas que quieres generar
 
 animals = list()
 for _ in range(number_pets):
-    pets_kind = pets_kinds[randint(0, len(pets_kinds)-1)]
-    pets_name = pets_names[randint(0, len(pets_names)-1)]
 
-    pets_info = {'kind' : pets_kind, "name" : pets_name}
+    #valores (caracteristicas) de las mascotas
+    pets_kind = pets_kinds[randint(0, len(pets_kinds) - 1)]
+    pets_name = pets_names[randint(0, len(pets_names) - 1)]
+    pets_age = randint(1, 12)
 
+    #diccionario para agragar caracteristicas de las mascotas
+    pets_info = {'kind' : pets_kind, "name" : pets_name, 'age' : pets_age}
+
+    #lista para almacenar cada mascota
     animals.append(pets_info)
 
+i = 1
 
-for animal in animals:
-    print(f"\n{animal}")
-    for data in animal:
-        if type(animal[data]) == str:
-                print(f"\t\t{data.title()} : {animal[data].title()}")
-        else:
-            print(f"\t\t{data.title()} : {animal[data]}")
+if number_pets == 0:
+    print("You don't have any Pets")
+else:
+    for animal in animals:
+
+        print(f"\nPets_{i}")
+        i += 1
+
+        for p_kind, p_pet in animal.items():
+            if type(p_pet) == str:
+                print(f"\t\t{p_kind.title()} : {p_pet.title()}")
+            else:
+                print(f"\t\t{p_kind.title()} : {p_pet}")
